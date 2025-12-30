@@ -96,7 +96,7 @@ public String login(@RequestBody LoginDto u) {
     public String add(@RequestBody User user,@PathVariable int adminId)
     {
         History h1 = new History();
-        h1.setDesciption("Admin "+adminId+" Created user "+user.getUsername());
+        h1.setDescription("Admin "+adminId+" Created user "+user.getUsername());
         userRepo.save(user);
         if(user.getBalance()>0)
         {
@@ -145,7 +145,7 @@ public String login(@RequestBody LoginDto u) {
             return "Balance Should be zero";
         }
         History h1 = new History();
-        h1.setDesciption("Admin "+adminId+" Deleted User "+user.getUsername());
+        h1.setDescription("Admin "+adminId+" Deleted User "+user.getUsername());
         historyRepo.save(h1);
         userRepo.delete(user);
         return "User Deleted Successfully";

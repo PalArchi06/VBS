@@ -19,7 +19,7 @@ public class History {
     int id;
     @Column(nullable = false)
 
-    String desciption;
+    String description;
     @CreationTimestamp
     @Column(nullable = false,updatable = true)
     LocalDateTime date;
